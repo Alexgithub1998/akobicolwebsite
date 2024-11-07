@@ -1,0 +1,467 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Advocacies | AKO BICOL Party List</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<style>
+/* [Previous CSS styles remain the same, adding new styles below] */
+:root {
+    --primary-color: #004225;
+    --secondary-color: #FFB800;
+    --text-color: #333333;
+    --light-bg: #F5F5F5;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.header {
+    background: var(--white);
+    padding: 1rem 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    height: 75px;
+}
+
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: red;
+}
+.logo span {
+    font-size: 1.5rem;
+    font-weight:bolder;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.hero {
+    padding-top: 120px;
+    background: linear-gradient(rgba(0,66,37,0.8), rgba(0,66,37,0.8)), 
+                url('mayon-volcano.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+    padding: 3rem;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 5rem 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: rgba(0, 200, 210, 1);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.advocacy-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.advocacy-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.news-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 1.5rem;
+}
+
+.news-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+}
+
+.footer {
+    background: rgba(59, 95, 152, 0.9); 
+    color: var(--white);
+    padding: 3rem 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+}
+
+.advocacy-hero {
+    padding-top: 120px;
+    background: rgba(59, 95, 152, 0.9); 
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.advocacy-section {
+    padding: 5rem 2rem;
+}
+
+.advocacy-card-large {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .advocacy-card-large {
+        grid-template-columns: 1fr;
+    }
+}
+
+.advocacy-image {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.advocacy-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.advocacy-content {
+    padding: 2rem;
+}
+
+.advocacy-content h3 {
+    color: rgba(0, 200, 210, 1);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.advocacy-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    background: var(--light-bg);
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.stat-item h4 {
+    font-size: 2.5rem;
+    color: rgba(0, 200, 210, 1);
+    margin-bottom: 0.5rem;
+}
+
+.initiatives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.initiative-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.initiative-card:hover {
+    transform: translateY(-5px);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: yellow;
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary-color);
+    border-radius: 5px;
+    transition: width 1.5s ease-in-out;
+}
+
+</style>
+</head>
+<body>
+     <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/ako-bicol-logo.jpg" alt="AKO BICOL Party List Logo">
+                <span class="logo-text">AKO BICOL</span> <span>PARTY LIST</span> 
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="advocacy.html">Advocacies</a>
+                <a href="projects.html">Projects</a>
+                <a href="news.html">News</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="advocacy-hero">
+        <h1>Our Advocacies</h1>
+        <p>Building a stronger, more resilient Bicol through sustainable development and inclusive growth</p>
+    </section>
+
+    <section class="advocacy-section">
+        <div class="container">
+            <div class="advocacy-stats" data-aos="fade-up">
+                <div class="stat-item">
+                    <h4>₱500M+</h4>
+                    <p>Disaster Response Fund</p>
+                </div>
+                <div class="stat-item">
+                    <h4>10,000+</h4>
+                    <p>Scholars Supported</p>
+                </div>
+                <div class="stat-item">
+                    <h4>50+</h4>
+                    <p>Infrastructure Projects</p>
+                </div>
+                <div class="stat-item">
+                    <h4>15,000+</h4>
+                    <p>Jobs Created</p>
+                </div>
+            </div>
+
+            <div class="advocacy-card-large" data-aos="fade-right">
+                <div class="advocacy-image">
+                    <img src="disaster-preparedness.jpg" alt="Disaster Preparedness Training">
+                </div>
+                <div class="advocacy-content">
+                    <h3>Disaster Preparedness and Response</h3>
+                    <p>As a region frequently affected by natural calamities, we prioritize:</p>
+                    <ul>
+                        <li>Early warning systems installation</li>
+                        <li>Community disaster response training</li>
+                        <li>Emergency equipment procurement</li>
+                        <li>Evacuation center improvements</li>
+                        <li>Post-disaster rehabilitation programs</li>
+                    </ul>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%;"></div>
+                    </div>
+                    <p>85% of targeted communities equipped with disaster response capabilities</p>
+                </div>
+            </div>
+
+            <div class="advocacy-card-large" data-aos="fade-left">
+                <div class="advocacy-content">
+                    <h3>Education and Youth Development</h3>
+                    <p>Investing in the future of Bicolano youth through:</p>
+                    <ul>
+                        <li>Comprehensive scholarship programs</li>
+                        <li>Educational infrastructure support</li>
+                        <li>Technical-vocational training</li>
+                        <li>Digital literacy initiatives</li>
+                        <li>School supplies distribution</li>
+                    </ul>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%;"></div>
+                    </div>
+                    <p>75% progress towards education accessibility goals</p>
+                </div>
+                <div class="advocacy-image">
+                    <img src="education-programs.jpg" alt="Education Programs">
+                </div>
+            </div>
+
+            <h2 class="section-title" style="margin-top: 4rem;">Current Initiatives</h2>
+            <div class="initiatives-grid">
+                <div class="initiative-card" data-aos="fade-up">
+                    <h3>Infrastructure Development</h3>
+                    <p>Improving road networks, bridges, and public facilities across the Bicol Region</p>
+                    <a href="/projects/infrastructure" class="cta-button">Learn More</a>
+                </div>
+                <div class="initiative-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Healthcare Access</h3>
+                    <p>Establishing medical facilities and providing healthcare services to remote areas</p>
+                    <a href="/projects/healthcare" class="cta-button">Learn More</a>
+                </div>
+                <div class="initiative-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Livelihood Programs</h3>
+                    <p>Creating sustainable employment opportunities and supporting local businesses</p>
+                    <a href="/projects/livelihood" class="cta-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>AKO BICOL Party List</h3>
+                    <p>Official Party List Representative<br>of the Bicol Region</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/akobicolofficial">Facebook</a>
+                        <a href="https://twitter.com/akobicolpl">Twitter</a>
+                        <a href="https://instagram.com/akobicolpl">Instagram</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Contact Us</h3>
+                    <p>Main Office: 123 Maharlika Highway<br>
+                    Legazpi City, Albay<br>
+                    Phone: (052) 123-4567<br>
+                    Email: info@akobicolpartylist.ph</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <nav>
+                        <a href="/about">About Us</a><br>
+                        <a href="/advocacies">Advocacies</a><br>
+                        <a href="/projects">Projects</a><br>
+                        <a href="/news">News</a><br>
+                        <a href="/contact">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>

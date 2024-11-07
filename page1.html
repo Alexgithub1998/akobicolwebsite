@@ -1,0 +1,445 @@
+<html><head><bases
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News & Updates | AKO BICOL Party List</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary-color: #004225;
+    --secondary-color: #FFB800;
+    --text-color: #333333;
+    --light-bg: #F5F5F5;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Header styles from previous page */
+.header {
+    background: var(--white);
+    padding: 1rem 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    height: 75px;
+}
+
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: red;
+}
+.logo span {
+    font-size: 1.5rem;
+    font-weight:bolder;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+/* News Page Specific Styles */
+.page-header {
+    padding-top: 120px;
+    background: rgba(59, 95, 152, 0.9); 
+    color: var(--white);
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.page-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.news-filters {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-button {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    background: var(--white);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-button.active {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.news-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.news-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 1.5rem;
+}
+
+.news-category {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 15px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.news-date {
+    color: #666;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.news-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: rgba(0, 200, 210, 1);
+}
+
+.news-excerpt {
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.pagination-button {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary-color);
+    background: var(--white);
+    color: var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination-button.active {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.footer {
+    background: rgba(59, 95, 152, 0.9); 
+    color: var(--white);
+    padding: 3rem 2rem;
+    margin-top: 3rem;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+<body>
+     <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/ako-bicol-logo.jpg" alt="AKO BICOL Party List Logo">
+               <span class="logo-text">AKO BICOL</span> <span>PARTY LIST</span> 
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="advocacy.html">Advocacies</a>
+                <a href="projects.html">Projects</a>
+                <a href="news.html">News</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1 class="page-title">News & Updates</h1>
+        <p>Stay informed with the latest activities and initiatives of AKO BICOL Party List</p>
+    </div>
+
+    <div class="news-filters">
+        <div class="filter-buttons">
+            <button class="filter-button active">All News</button>
+            <button class="filter-button">Community Programs</button>
+            <button class="filter-button">Disaster Response</button>
+            <button class="filter-button">Education</button>
+            <button class="filter-button">Infrastructure</button>
+            <button class="filter-button">Healthcare</button>
+        </div>
+    </div>
+
+    <main class="news-container">
+        <div class="news-grid">
+            <article class="news-card">
+                <img src="/images/medical-mission.jpg" alt="Medical Mission in Sorsogon" class="news-image">
+                <div class="news-content">
+                    <span class="news-category">Healthcare</span>
+                    <time class="news-date">June 20, 2023</time>
+                    <h2 class="news-title">Free Medical Mission Serves 1,000 Residents in Sorsogon</h2>
+                    <p class="news-excerpt">AKO BICOL Party List conducted a comprehensive medical mission providing free check-ups, medicines, and dental services...</p>
+                    <a href="/news/medical-mission-sorsogon" class="read-more">Read Full Story →</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="/images/relief-operations.jpg" alt="Relief Operations in Albay" class="news-image">
+                <div class="news-content">
+                    <span class="news-category">Disaster Response</span>
+                    <time class="news-date">June 15, 2023</time>
+                    <h2 class="news-title">Relief Operations for Communities Affected by Recent Typhoon</h2>
+                    <p class="news-excerpt">Emergency relief goods and supplies were distributed to affected families in various municipalities of Albay...</p>
+                    <a href="/news/relief-operations-albay" class="read-more">Read Full Story →</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="/images/scholarship-program.jpg" alt="Scholarship Program Launch" class="news-image">
+                <div class="news-content">
+                    <span class="news-category">Education</span>
+                    <time class="news-date">June 10, 2023</time>
+                    <h2 class="news-title">2023 Scholarship Program Opens for Bicolano Students</h2>
+                    <p class="news-excerpt">500 scholarship slots available for deserving students across the Bicol Region for the academic year 2023-2024...</p>
+                    <a href="/news/scholarship-program-2023" class="read-more">Read Full Story →</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="/images/road-project.jpg" alt="Road Infrastructure Project" class="news-image">
+                <div class="news-content">
+                    <span class="news-category">Infrastructure</span>
+                    <time class="news-date">June 5, 2023</time>
+                    <h2 class="news-title">New Road Project to Connect Remote Communities</h2>
+                    <p class="news-excerpt">Groundbreaking ceremony marks the start of a ₱50M road construction project in Camarines Sur...</p>
+                    <a href="/news/road-project-camsur" class="read-more">Read Full Story →</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="/images/livelihood-training.jpg" alt="Livelihood Training Program" class="news-image">
+                <div class="news-content">
+                    <span class="news-category">Community Programs</span>
+                    <time class="news-date">June 1, 2023</time>
+                    <h2 class="news-title">Skills Training Program Empowers 200 Residents</h2>
+                    <p class="news-excerpt">Free skills training program provides new livelihood opportunities for residents of Masbate...</p>
+                    <a href="/news/livelihood-training-masbate" class="read-more">Read Full Story →</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <img src="/images/healthcare-center.jpg" alt="Healthcare Center Inauguration" class="news-image">
+                <div class="news-content">
+                    <span class="news-category">Healthcare</span>
+                    <time class="news-date">May 28, 2023</time>
+                    <h2 class="news-title">New Healthcare Center Opens in Catanduanes</h2>
+                    <p class="news-excerpt">State-of-the-art healthcare facility brings improved medical services to remote areas...</p>
+                    <a href="/news/healthcare-center-catanduanes" class="read-more">Read Full Story →</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="pagination">
+    <a href="news.html" class="pagination-button active">1</a>
+    <a href="page2.html" class="pagination-button">2</a>
+    <a href="page3.html" class="pagination-button">3</a>
+    <a href="page4.html" class="pagination-button">4</a>
+    <a href="page5.html" class="pagination-button">5</a>
+    <a href="page2.html" class="pagination-button">Next →</a>
+</div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>AKO BICOL Party List</h3>
+                    <p>Official Party List Representative<br>of the Bicol Region</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/akobicolofficial">Facebook</a>
+                        <a href="https://twitter.com/akobicolpl">Twitter</a>
+                        <a href="https://instagram.com/akobicolpl">Instagram</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Contact Us</h3>
+                    <p>Main Office: 123 Maharlika Highway<br>
+                    Legazpi City, Albay<br>
+                    Phone: (052) 123-4567<br>
+                    Email: info@akobicolpartylist.ph</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Filter buttons functionality
+    const filterButtons = document.querySelectorAll('.filter-button');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // Pagination functionality
+    const newsCards = document.querySelectorAll('.news-card');
+    const paginationButtons = document.querySelectorAll('.pagination-button');
+    const articlesPerPage = 3;
+    let currentPage = 1;
+
+    function showPage(page) {
+        currentPage = page;
+        const start = (page - 1) * articlesPerPage;
+        const end = start + articlesPerPage;
+
+        // Hide all articles initially
+        newsCards.forEach((card, index) => {
+            card.style.display = (index >= start && index < end) ? 'block' : 'none';
+        });
+
+        // Update pagination buttons' active class
+        paginationButtons.forEach(button => button.classList.remove('active'));
+        paginationButtons[page - 1].classList.add('active');
+    }
+
+    paginationButtons.forEach((button, index) => {
+        button.addEventListener('click', function() {
+            if (button.textContent.includes('Next')) {
+                if (currentPage < paginationButtons.length - 1) {
+                    showPage(currentPage + 1);
+                }
+            } else {
+                showPage(index + 1);
+            }
+        });
+    });
+
+    // Initial page load
+    showPage(1);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,556 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects & Initiatives | AKO BICOL Party List</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<style>
+/* Base styles from previous page... */
+:root {
+    --primary-color: #004225;
+    --secondary-color: #FFB800;
+    --text-color: #333333;
+    --light-bg: #F5F5F5;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.header {
+    background: var(--white);
+    padding: 1rem 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    height: 75px;
+}
+
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: red;
+}
+.logo span {
+    font-size: 1.5rem;
+    font-weight:bolder;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.hero {
+    padding-top: 100px;
+    background: linear-gradient(rgba(0,66,37,0.8), rgba(0,66,37,0.8)), 
+                url('mayon-volcano.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+    padding: 8rem 2rem;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 5rem 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.advocacy-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.advocacy-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.news-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 1.5rem;
+}
+
+.news-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+}
+
+.footer {
+    background: rgba(59, 95, 152, 0.9); 
+    color: var(--white);
+    padding: 3rem 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+}
+.project-hero {
+    padding-top: 120px;
+    background: rgba(59, 95, 152, 0.9); 
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.filter-button {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 25px;
+    background: transparent;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-button.active,
+.filter-button:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.project-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status-completed {
+    background: #4CAF50;
+    color: white;
+}
+
+.status-ongoing {
+    background: #FFC107;
+    color: black;
+}
+
+.status-upcoming {
+    background: #2196F3;
+    color: white;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+.project-content h3 {
+    color: darkturquoise;
+
+}
+
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    margin: 1rem 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 5px;
+    background: var(--primary-color);
+}
+
+.project-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.stat-item h4 {
+    color: darkturquoise;
+    font-size: 1.5rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.page-button {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-button.active,
+.page-button:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+</style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/ako-bicol-logo.jpg" alt="AKO BICOL Party List Logo">
+                <span class="logo-text">AKO BICOL</span> <span>PARTY LIST</span> 
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="advocacy.html">Advocacies</a>
+                <a href="projects.html">Projects</a>
+                <a href="news.html">News</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <section class="project-hero">
+        <h1>Our Projects & Initiatives</h1>
+        <p>Discover how AKO BICOL is working to improve lives across the Bicol Region through various development projects and programs.</p>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="project-filters">
+                <button class="filter-button active">All Projects</button>
+                <button class="filter-button">Infrastructure</button>
+                <button class="filter-button">Education</button>
+                <button class="filter-button">Healthcare</button>
+                <button class="filter-button">Livelihood</button>
+                <button class="filter-button">Disaster Response</button>
+            </div>
+
+            <div class="news-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="../images/school-building.jpg" alt="New School Building in Albay">
+                        <span class="project-status status-completed">Completed</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span>Location: Albay</span>
+                            <span>Completed: May 2023</span>
+                        </div>
+                        <h3>New School Building Construction</h3>
+                        <p class="project-description">Three-story school building with 12 classrooms, computer laboratory, and library facilities.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 100%"></div>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat-item">
+                                <h4>₱15M</h4>
+                                <p>Budget</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>500+</h4>
+                                <p>Students Benefited</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>12</h4>
+                                <p>Classrooms</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="../images/healthcare-center.jpg" alt="Healthcare Center in Sorsogon">
+                        <span class="project-status status-ongoing">Ongoing</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span>Location: Sorsogon</span>
+                            <span>Started: March 2023</span>
+                        </div>
+                        <h3>Modern Healthcare Center</h3>
+                        <p class="project-description">State-of-the-art healthcare facility providing medical services to rural communities.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat-item">
+                                <h4>₱25M</h4>
+                                <p>Budget</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>65%</h4>
+                                <p>Completed</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>10K+</h4>
+                                <p>Target Beneficiaries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="../images/livelihood-program.jpg" alt="Livelihood Program in Masbate">
+                        <span class="project-status status-ongoing">Ongoing</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span>Location: Masbate</span>
+                            <span>Started: April 2023</span>
+                        </div>
+                        <h3>Sustainable Livelihood Program</h3>
+                        <p class="project-description">Skills training and micro-enterprise development program for local communities.</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 45%"></div>
+                        </div>
+                        <div class="project-stats">
+                            <div class="stat-item">
+                                <h4>₱8M</h4>
+                                <p>Budget</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>300+</h4>
+                                <p>Participants</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>45%</h4>
+                                <p>Completed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button class="page-button active">1</button>
+                <button class="page-button">2</button>
+                <button class="page-button">3</button>
+                <button class="page-button">4</button>
+                <button class="page-button">Next →</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <!-- Same footer as main page -->
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>AKO BICOL Party List</h3>
+                    <p>Official Party List Representative<br>of the Bicol Region</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/akobicolofficial">Facebook</a>
+                        <a href="https://twitter.com/akobicolpl">Twitter</a>
+                        <a href="https://instagram.com/akobicolpl">Instagram</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Contact Us</h3>
+                    <p>Main Office: 123 Maharlika Highway<br>
+                    Legazpi City, Albay<br>
+                    Phone: (052) 123-4567<br>
+                    Email: info@akobicolpartylist.ph</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <nav>
+                        <a href="/about">About Us</a><br>
+                        <a href="/advocacies">Advocacies</a><br>
+                        <a href="/projects">Projects</a><br>
+                        <a href="/news">News</a><br>
+                        <a href="/contact">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-button');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                // Add filtering logic here
+            });
+        });
+    </script>
+</body>
+</html>
